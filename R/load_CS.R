@@ -42,10 +42,10 @@ load_CS_1000 <- function(path, datetime = 'TIMESTAMP', timezone = 'EST', col_nam
 #' @examples df <- load_CS_10(ex_path)
 load_CS_10 <- function(path, timezone = 'EST', col_names = NA, pos_year = 2, pos_doy = 3, pos_time = 4, index = 115) {
 
-  if (is.na(col_names) == F){
-    df <- utils::read.csv(path, col.names = col_names, header = F)
-  } else {
+  if (is.vector(col_names) == F){
     df <- utils::read.csv(path, header = F)
+  } else {
+    df <- utils::read.csv(path, col.names = col_names, header = F)
   }
 
   # remove daily average row which has index of 115 always
