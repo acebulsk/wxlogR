@@ -26,3 +26,35 @@ load_CS_1000 <- function(path, datetime = 'TIMESTAMP', timezone = 'EST', col_nam
 
   return(df)
 }
+
+#' Load Campbell Sci 10x logger readout.
+#'
+#' @inheritParams load_CS_1000
+#' @param pos_year Column position for year.
+#' @param pos_doy Column position for day of year.
+#' @param pos_time Column position for CS time. Formatted as (ex. 100 == 01:00:00 a.m. 60 minutes since midnight)
+#' @param index what is the row index you are after. Default is 115 which is the 15 min average and removes the daily average.
+#'
+#' @return logger readout with datetime parsed and with column headers and daily average removed
+#' @export
+#'
+#' @examples ex_path <- system.file('extdata', '10x.dat', package = 'wxlogR')
+#' @examples df <- load_CS_10(ex_path)
+load_CS_10 <- function(path, timezone = 'EST', col_names = NA, pos_year = 2, pos_doy = 3, pos_time = 4, index = 115) {
+
+  if (is.na(col_names) == F){
+    df <- utils::read.csv(path, col.names = col_names, header = F)
+  } else {
+    df <- utils::read.csv(path, header = F)
+  }
+
+  # remove daily average row which has index of 115 always
+
+  df <- df[df[,1] == 115,]
+
+  df$date <- as.Date(df[,pos_doy]-1, origin = paste0(df[,pos_year],'-01-01'))
+
+  df$datetime <- as.POSIXct(paste(df$date, parse_CS_time(df[, pos_time])), format = '%Y-%m-%d %H%M%S', timezone = timezone)
+
+  return(df)
+}
