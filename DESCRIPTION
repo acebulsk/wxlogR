@@ -1,0 +1,13 @@
+Package: wxlogR
+Title: For Working with Hydrometerological Station Data Logger Readouts
+Version: 0.0.0.9000
+Authors@R: 
+    person("Alex", "Cebulski", , "alexcebulski@gmail.com", role = c("aut", "cre"))
+Description: Convenience functions for loading data from hydrometerological loggers such as Cambell Sci, FTS, HOBO, etc. dataloggers. Currently supports Cambell Sci 1000x, 800x, 10x file formats.
+License: GPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+Imports: 
+    utils
+
