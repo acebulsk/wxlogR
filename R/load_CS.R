@@ -1,4 +1,4 @@
-#' Title
+#' Load Campbell Sci formatted logger readout. Default is setup to work with 1000x / 3000x format.
 #'
 #' @param path A path to the data readout to be loaded.
 #' @param datetime String to be used for the datetime column.
@@ -11,8 +11,8 @@
 #' @export
 #'
 #' @examples ex_path <- system.file('extdata', 'treefort_1000x.dat', package = 'wxlogR')
-#' @examples df <- load_1000x(ex_path)
-load_1000x <- function(path, datetime = 'TIMESTAMP', timezone = 'EST', col_names = NA, skip_4_names = 1, skip_4_dat = 3){
+#' @examples df <- load_CS_1000(ex_path)
+load_CS_1000 <- function(path, datetime = 'TIMESTAMP', timezone = 'EST', col_names = NA, skip_4_names = 1, skip_4_dat = 3){
 
   if (is.na(col_names) == T) {
     col_names <- colnames(read.csv(path, skip = skip_4_names))
