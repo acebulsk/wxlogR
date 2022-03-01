@@ -8,13 +8,13 @@
 #' @param col_names Vector of column names same length as number of columns in the readout.
 #' @param skip_4_names Number of lines to skip in the readout to get to column names. Default = 1.
 #' @param skip_4_dat Number of lines to skip in the readout to get data. Default = 3.
-#'
+#' @param na_string Character string that represents NULL value
 #' @return
 #' @export
 #'
 #' @examples ex_path <- system.file('extdata', 'treefort_1000x.dat', package = 'wxlogR')
 #' @examples df <- load_CS_1000(ex_path)
-load_CS_1000 <- function(path, datetime = 'TIMESTAMP', timezone = 'EST', col_names = NA, skip_4_names = 1, skip_4_dat = 3){
+load_CS_1000 <- function(path, datetime = 'TIMESTAMP', timezone = 'EST', col_names = NA, skip_4_names = 1, skip_4_dat = 3, na_string = "NAN"){
 
   if (is.na(col_names) == T) {
     col_names <- colnames(read.csv(path, skip = skip_4_names))
@@ -22,7 +22,7 @@ load_CS_1000 <- function(path, datetime = 'TIMESTAMP', timezone = 'EST', col_nam
     stop("ERROR: df_met_nms must be a vector.")
   }
 
-  df <- utils::read.csv(path, skip = skip_4_dat, col.names = col_names)
+  df <- utils::read.csv(path, skip = skip_4_dat, col.names = col_names, na.strings = na_string)
 
   df[, datetime] <- as.POSIXct(df[, datetime], tz = timezone)
 
