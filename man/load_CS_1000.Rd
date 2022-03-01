@@ -22,9 +22,9 @@ load_CS_1000(
 
 \item{col_names}{Vector of column names same length as number of columns in the readout.}
 
-\item{skip_4_names}{Number of lines to skip in the readout to get to column names.}
+\item{skip_4_names}{Number of lines to skip in the readout to get to column names. Default = 1.}
 
-\item{skip_4_dat}{Number of lines to skip in the readout to get data.}
+\item{skip_4_dat}{Number of lines to skip in the readout to get data. Default = 3.}
 }
 \value{
 

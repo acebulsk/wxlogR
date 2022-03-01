@@ -2,7 +2,7 @@
 % Please edit documentation in R/load_CS.R
 \name{load_CS_10}
 \alias{load_CS_10}
-\title{Load Campbell Sci 10x logger readout.}
+\title{Load Campbell Sci 10x logger readout. Usually no column names here so need to input yourself.}
 \usage{
 load_CS_10(
   path,
@@ -33,7 +33,7 @@ load_CS_10(
 logger readout with datetime parsed and with column headers and daily average removed
 }
 \description{
-Load Campbell Sci 10x logger readout.
+Load Campbell Sci 10x logger readout. Usually no column names here so need to input yourself.
 }
 \examples{
 ex_path <- system.file('extdata', '10x.dat', package = 'wxlogR')
