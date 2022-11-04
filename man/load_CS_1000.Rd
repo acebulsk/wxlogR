@@ -30,7 +30,7 @@ load_CS_1000(
 \item{na_string}{Character string that represents NULL value}
 }
 \value{
-
+dataframe
 }
 \description{
 Load Campbell Sci formatted logger readout. Default is setup to work with 1000x / 3000x format.

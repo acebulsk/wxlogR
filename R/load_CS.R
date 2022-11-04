@@ -9,7 +9,7 @@
 #' @param skip_4_names Number of lines to skip in the readout to get to column names. Default = 1.
 #' @param skip_4_dat Number of lines to skip in the readout to get data. Default = 3.
 #' @param na_string Character string that represents NULL value
-#' @return
+#' @return dataframe
 #' @export
 #'
 #' @examples ex_path <- system.file('extdata', 'treefort_1000x.dat', package = 'wxlogR')

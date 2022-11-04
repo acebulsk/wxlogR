@@ -30,7 +30,7 @@ load_CS_HF(
 \item{num_rows}{Number of rows to retrieve.}
 }
 \value{
-
+dataframe
 }
 \description{
 ** Watch timezone, data.table defaults to UTC for performance need to manually

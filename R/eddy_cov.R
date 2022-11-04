@@ -14,7 +14,7 @@
 #' @param skip_4_dat Number of lines to skip in the readout to get data. Default = 3.
 #' @param num_rows Number of rows to retrieve.
 #'
-#' @return
+#' @return dataframe
 #' @export
 #'
 #' @examples ex_path <- system.file('extdata', 'HF_EC_example.dat', package = 'wxlogR')
