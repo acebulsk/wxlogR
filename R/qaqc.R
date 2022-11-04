@@ -14,7 +14,7 @@
 #' @examples df <- load_CS_HF(ex_path)
 #' @examples datetime_seq_full(df$datetime)
 datetime_seq_full <- function(datetime, timestep = NA){
-  date_range <- range(datetime)
+  date_range <- range(datetime, na.rm = T)
 
   if (is.na(timestep)) {
   timestep <- difftime(datetime[3], datetime[2], units = 'secs') |> as.numeric()
