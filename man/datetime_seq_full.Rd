@@ -7,7 +7,7 @@
 datetime_seq_full(datetime, timestep = NA)
 }
 \arguments{
-\item{datetime}{}
+\item{POSIXct}{datetime vector with potential gaps}
 }
 \value{
 POSIXct vector
@@ -17,6 +17,6 @@ Takes a vector of POSIXct datetimes which potentially has gaps and will return a
 }
 \examples{
 ex_path <- system.file('extdata', 'treefort_1000x.dat', package = 'wxlogR')
-df <- load_CS_HF(ex_path)
-datetime_seq_full(df$datetime)
+df <- load_CS_1000(ex_path)
+datetime_seq_full(df$TIMESTAMP)
 }
