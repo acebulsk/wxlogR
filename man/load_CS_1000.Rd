@@ -7,10 +7,11 @@
 load_CS_1000(
   path,
   datetime = "TIMESTAMP",
-  timezone = "EST",
+  timezone = "UTC",
   col_names = NA,
   skip_4_names = 1,
-  skip_4_dat = 3
+  skip_4_dat = 3,
+  na_string = "NAN"
 )
 }
 \arguments{
@@ -18,13 +19,15 @@ load_CS_1000(
 
 \item{datetime}{String to be used for the datetime column.}
 
-\item{timezone}{POSIXct timezone for readout.}
+\item{timezone}{POSIXct timezone for readout. Default to UTC so we dont have timezone conversion issue.}
 
 \item{col_names}{Vector of column names same length as number of columns in the readout.}
 
 \item{skip_4_names}{Number of lines to skip in the readout to get to column names. Default = 1.}
 
 \item{skip_4_dat}{Number of lines to skip in the readout to get data. Default = 3.}
+
+\item{na_string}{Character string that represents NULL value}
 }
 \value{
 

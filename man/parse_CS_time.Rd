@@ -10,11 +10,11 @@ parse_CS_time(time)
 \item{time}{formatted as (ex. 100 == 01:00:00 a.m. 60 minutes since midnight)}
 }
 \value{
-time integer formatted so that posixct can accept
+time integer formatted so that posixct can accept (HHMMSS)
 }
 \description{
 Parse Campbell Sci 10x time.
 }
 \examples{
-parse_CS_time('00:15:00')
+parse_CS_time('100')
 }

@@ -6,7 +6,7 @@
 \usage{
 load_CS_10(
   path,
-  timezone = "EST",
+  timezone = "UTC",
   col_names = NA,
   pos_year = 2,
   pos_doy = 3,
@@ -17,7 +17,7 @@ load_CS_10(
 \arguments{
 \item{path}{A path to the data readout to be loaded.}
 
-\item{timezone}{POSIXct timezone for readout.}
+\item{timezone}{POSIXct timezone for readout. Default to UTC so we dont have timezone conversion issue.}
 
 \item{col_names}{Vector of column names same length as number of columns in the readout.}
 

@@ -9,19 +9,17 @@ performance. Should load 5 gigs in a few seconds.}
 load_CS_HF(
   path,
   datetime = "TIMESTAMP",
-  timezone = "EST",
   col_names = NA,
   skip_4_names = 1,
   skip_4_dat = 4,
-  num_rows = 1000
+  num_rows = NA,
+  threads = 8
 )
 }
 \arguments{
 \item{path}{A path to the data readout to be loaded.}
 
 \item{datetime}{String to be used for the datetime column.}
-
-\item{timezone}{The POSIXct timezone for original readout.}
 
 \item{col_names}{Vector of column names same length as number of columns in the readout.}
 
@@ -35,9 +33,8 @@ load_CS_HF(
 
 }
 \description{
-Load Campbell Sci hi frequency (HF) data, if header is TOB3 need to convert
-to TOA5 using card convert. Uses data.table package for loading for increased
-performance. Should load 5 gigs in a few seconds.
+** Watch timezone, data.table defaults to UTC for performance need to manually
+change after when working with smaller subsection **
 }
 \examples{
 ex_path <- system.file('extdata', 'HF_EC_example.dat', package = 'wxlogR')
